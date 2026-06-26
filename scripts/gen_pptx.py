@@ -250,18 +250,22 @@ def s_notify():
 
 # 17 ACHIEVEMENTS
 def s_ach():
-    sl=slide(); bg(sl); header(sl,"06 建设成果","建设成果小结","六个维度，系统已具备真实可用能力")
+    sl=slide(); bg(sl); header(sl,"06 建设成果","建设成果小结","系统已上线，六个维度具备真实可用能力")
+    # 上线 banner
+    rect(sl,0.62,2.08,12.1,0.66,fill=TEAL,radius=0.10,shadow=True)
+    text(sl,0.62,2.08,12.1,0.66,"✅  系统已部署上线运行（阿里云），持续运维迭代 —— 面向真实业务的可用系统，而非演示原型",
+         15,WHITE,True,PP_ALIGN.CENTER,anchor=MSO_ANCHOR.MIDDLE)
     ach=[("真实数据驱动","1,344 门课 · 22 学院 · 2 校区 · 595 教师 · 58 用户"),
          ("角色全覆盖","四类角色权限清晰，数据隔离到位"),("流程全闭环","找课—听课—评价—统计—反馈一站打通"),
          ("评价标准化","复刻现行评价表，定量+定性，支持草稿与算分"),
          ("质量有保障","全部单元测试通过 · TypeScript 零类型错误"),("多端可用","电脑 / 平板 / 手机响应式适配")]
-    cw=5.85;ch=1.18;gx=0.4;x0=0.62;y0=2.3
+    cw=5.85;ch=1.04;gx=0.4;x0=0.62;y0=2.95
     for i,(t,d) in enumerate(ach):
-        r,c=divmod(i,2); x=x0+c*(cw+gx); y=y0+r*(ch+0.22)
+        r,c=divmod(i,2); x=x0+c*(cw+gx); y=y0+r*(ch+0.16)
         rect(sl,x,y,cw,ch,fill=CARDBG,line=LINE,lw=0.75,radius=0.10,shadow=True)
-        rect(sl,x+0.25,y+0.30,0.58,0.58,fill=GREEN,radius=0.22)
-        text(sl,x+0.25,y+0.28,0.58,0.58,"✓",20,WHITE,True,PP_ALIGN.CENTER,anchor=MSO_ANCHOR.MIDDLE)
-        text(sl,x+1.05,y+0.22,cw-1.2,0.5,t,17,NAVY,True); text(sl,x+1.05,y+0.66,cw-1.2,0.45,d,12,GRAY)
+        rect(sl,x+0.25,y+0.24,0.56,0.56,fill=GREEN,radius=0.22)
+        text(sl,x+0.25,y+0.22,0.56,0.56,"✓",19,WHITE,True,PP_ALIGN.CENTER,anchor=MSO_ANCHOR.MIDDLE)
+        text(sl,x+1.0,y+0.18,cw-1.15,0.5,t,16.5,NAVY,True); text(sl,x+1.0,y+0.6,cw-1.15,0.4,d,12,GRAY)
     footer(sl,17)
 
 # 18 DEV
@@ -349,7 +353,7 @@ fdetail(14,"04 核心功能 · 功能⑥","工号登录与用户管理","以工�
          "基于角色的权限控制与数据隔离（如学院秘书仅见本院）","研究生院主管可进行用户与角色管理"],
         ph_label="工号登录页面")
 s_image(15,"05 业务闭环","督导业务闭环","从找课到改进，串成一条可沉淀、可统计、可追溯的数字化链路",f"{D}/business-loop.png")
-s_image(16,"05 技术架构","系统架构（简要）","前后端分离 · 数据驱动 · 真实课表自动解析建库",f"{D}/architecture.png")
+s_image(16,"05 技术架构","系统架构（简要）","前后端分离 · 数据驱动 · 真实课表自动解析建库 · 已部署阿里云上线运行",f"{D}/architecture.png")
 s_ach(); s_dev(); s_value(); s_roadmap()
 s_qa(21,"07 答辩 Q&A","常见问题预演（一）","建设与数据",[
   ("数据来源是否可靠？如何保证与真实课表一致？","全部数据来源于学校《全校总课表》等真实文件，自动解析建库（1,344 门课、22 学院、595 名教师），筛选逻辑与原课表一致，可随新学期课表定期更新。"),

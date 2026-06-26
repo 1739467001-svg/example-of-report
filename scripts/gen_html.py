@@ -160,7 +160,7 @@ slide(header("05 业务闭环","督导业务闭环","从找课到改进，串成
       f'<img class="bigimg" src="{IMG["loop"]}" alt="业务闭环">')
 
 # 16 ARCHITECTURE
-slide(header("05 技术架构","系统架构（简要）","前后端分离 · 数据驱动 · 真实课表自动解析建库")+
+slide(header("05 技术架构","系统架构（简要）","前后端分离 · 数据驱动 · 真实课表自动解析建库 · 已部署阿里云上线运行")+
       f'<img class="bigimg tall" src="{IMG["arch"]}" alt="系统架构">')
 
 # 17 ACHIEVEMENTS
@@ -169,7 +169,8 @@ ach=[("book","真实数据驱动","1,344 门课 · 22 学院 · 2 校区 · 595 
      ("clipboard","评价标准化","复刻现行评价表，定量+定性，支持草稿与算分"),
      ("shield","质量有保障","全部单元测试通过 · TypeScript 零类型错误"),("layers","多端可用","电脑 / 平板 / 手机响应式适配")]
 acc=''.join(f'<div class="ach"><div class="ach-ic">{icon(ic)}</div><div><h4>{t}</h4><p>{d}</p></div></div>' for ic,t,d in ach)
-slide(header("06 建设成果","建设成果小结","六个维度，系统已具备真实可用能力")+f'<div class="ach-grid">{acc}</div>')
+banner='<div class="ach-banner">✅ 系统已部署上线运行（阿里云），持续运维迭代 —— 面向真实业务的可用系统，而非演示原型</div>'
+slide(header("06 建设成果","建设成果小结","系统已上线，六个维度具备真实可用能力")+banner+f'<div class="ach-grid">{acc}</div>')
 
 # 18 DEV
 slide(header("06 开发方式","AI 辅助 + 数据驱动的敏捷开发","让“真实数据 → 可用系统”更快、更贴合一线需求")+
@@ -303,7 +304,8 @@ html,body{{height:100%;background:#0a1830;font-family:"Microsoft YaHei","PingFan
 .nf-teal{{border-left:5px solid #0E9F8E}} .nf-gold{{border-left:5px solid var(--gold)}}
 .nf-arrow{{color:var(--sky);font-size:20px}}
 .nf-split{{display:flex;gap:20px}} .nf-node.sm{{min-width:200px;padding:14px 20px}}
-.ach-grid{{display:grid;grid-template-columns:1fr 1fr;gap:18px 26px;margin-top:28px!important}}
+.ach-banner{{margin-top:16px!important;background:linear-gradient(90deg,#0E9F8E,#2BA873);color:#fff;border-radius:12px;padding:13px 24px;font-size:18px;font-weight:700;text-align:center;box-shadow:0 8px 22px rgba(14,159,142,.22)}}
+.ach-grid{{display:grid;grid-template-columns:1fr 1fr;gap:14px 26px;margin-top:14px!important}}
 .ach{{display:flex;gap:16px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 22px;box-shadow:0 6px 18px rgba(14,42,86,.05)}}
 .ach-ic{{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--green),#37b98a);display:flex;align-items:center;justify-content:center;flex:0 0 auto}}
 .ach-ic svg{{width:26px;height:26px;color:#fff}}
