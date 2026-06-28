@@ -55,8 +55,8 @@ def arrow(x1,y1,x2,y2,color=SKY,wd=4):
 # ---------------- Diagram 1: Data Foundation ----------------
 def data_foundation():
     W=1600; s=""
-    cards=[("1,344","门研究生课程",BLUE),("22","个学院",SKY),("2","个校区",CYAN),
-           ("595","名授课教师",TEAL),("58","位系统用户",GOLD),("单双周","完整排课规则",GREEN)]
+    cards=[("1,431","门研究生课程",BLUE),("22","个学院",SKY),("2","个校区",CYAN),
+           ("588","名授课教师",TEAL),("58","位系统用户",GOLD),("单双周","完整排课规则",GREEN)]
     n=len(cards); m=60; gap=30; cw=(W-2*m-(n-1)*gap)/n; cy=200; ch=250
     for i,(num,lab,acc) in enumerate(cards):
         x=m+i*(cw+gap)

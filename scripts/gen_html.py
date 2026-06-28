@@ -9,7 +9,9 @@ IMG={k:b64(f"{A}/{p}") for k,p in {
  "cover":"diagrams/cover-bg.png","data":"diagrams/data-foundation.png","role":"diagrams/role-matrix.png",
  "arch":"diagrams/architecture.png","eval":"diagrams/eval-system.png","loop":"diagrams/business-loop.png",
  "radar":"diagrams/chart-eval-radar.png","college":"diagrams/chart-college.png","scoredist":"diagrams/chart-scoredist.png",
- "dash":"screenshots/dashboard.png","rec":"screenshots/eval-record.png","item":"screenshots/eval-form-item.png",
+ "rec":"screenshots/eval-record.png",
+ "login":"screenshots/login.png","workbench":"screenshots/workbench.png","courses":"screenshots/courses.png",
+ "evalform1":"screenshots/evalform1.png","evalform2":"screenshots/evalform2.png","usermenu":"screenshots/usermenu.png",
 }.items()}
 
 def icon(name):
@@ -99,11 +101,11 @@ feats=[("filter","全校课程多维筛选","按周次/星期/学院/校区/教�
 fc=''.join(f'<div class="feat"><div class="feat-ic">{icon(ic)}</div><h4>{t}</h4><p>{d}</p></div>' for ic,t,d in feats)
 slide(header("04 核心功能","六大核心功能模块","覆盖督导工作全流程，下面逐项展开")+f'<div class="feat-grid">{fc}</div>')
 
-# 7 功能① 筛选
+# 7 功能① 筛选（真实截图）
 fdetail("04 核心功能 · 功能①","全校课程多维筛选","按多维度精确定位目标课程，与原始课表完全一致",
-        ["全校 <b>1,344 门课程</b> 在线检索，告别翻纸质课表","支持 <b>周次 / 星期 / 学院 / 校区 / 教师</b> 多维组合筛选",
+        ["全校 <b>1,431 门课程</b> 在线检索，告别翻纸质课表","支持 <b>周次 / 星期 / 学院 / 校区 / 教师</b> 多维组合筛选",
          "筛选逻辑与原课表一致（如“会计学院 + 第 3 周”精确联动）","督导专家可快速锁定“本周哪天、哪个学院、哪位老师”有课"],
-        placeholder("全校课程 · 筛选页面"),7)
+        shotfig(IMG["courses"],"全校课程 · 多维筛选（真实界面）"),7)
 
 # 8 功能② 听课计划
 fdetail("04 核心功能 · 功能②","听课计划 · 待办与日历视图","把有意向的课程一键纳入计划，按周直观安排",
@@ -115,16 +117,20 @@ fdetail("04 核心功能 · 功能②","听课计划 · 待办与日历视图","
 slide(header("04 核心功能 · 功能③","标准化课程评价体系","完全复刻学校现行《课程评价表》：20 项定量 + 定性，系统自动计算综合评分")+
       f'<img class="bigimg tall" src="{IMG["eval"]}" alt="评价体系">')
 
-# 10 评价记录与界面（真实截图）
-slide(header("04 核心功能 · 功能③","评价记录与界面","评价详情清晰呈现各维度得分、综合评分与星级")+
-      f'''<div class="ui-row">
-      <figure><img src="{IMG["rec"]}" alt="评价记录详情"><figcaption>课程评价记录详情页（真实界面）</figcaption></figure>
-      <figure class="small"><img src="{IMG["item"]}" alt="评价表项"><figcaption>标准化评价表项（分级评分）</figcaption></figure></div>''')
+# 10 真实评价表单（真实截图）
+slide(header("04 核心功能 · 功能③","真实评价表单","四大维度 + 互斥单选 + 定性文字，完整复刻学校《课程评价表》")+
+      f'''<div class="ui-row formrow">
+      <figure><img src="{IMG["evalform1"]}" alt="评价表单上"><figcaption>一、教师风范 / 二、学生状态</figcaption></figure>
+      <figure><img src="{IMG["evalform2"]}" alt="评价表单下"><figcaption>三、课程内容（含 4.1/4.2 互斥）/ 四、教学过程 / 定性评价</figcaption></figure></div>''')
 
-# 11 功能④ 数据看板
-slide(header("04 核心功能 · 功能④","研究生院主管工作台 · 数据可视化","关键指标一屏总览，评价结果多维度图形化呈现")+
+# 11 评价记录详情（真实截图）
+slide(header("04 核心功能 · 功能③","评价记录与详情","评价详情清晰呈现各维度得分、综合评分与星级")+
+      f'''<div class="ui-row"><figure class="wide"><img src="{IMG["rec"]}" alt="评价记录详情"><figcaption>课程评价记录详情页（真实界面）</figcaption></figure></div>''')
+
+# 12 功能④ 工作台·数据看板（真实截图）
+slide(header("04 核心功能 · 功能④","工作台 · 数据看板","关键指标一屏总览（待听课/已完成评价/通知/全校课程），评价结果多维可视化")+
       f'''<div class="ui-row">
-      <figure style="flex:1.5"><img src="{IMG["dash"]}" alt="仪表盘"><figcaption>研究生院主管数据看板（真实界面）</figcaption></figure>
+      <figure style="flex:1.5"><img src="{IMG["workbench"]}" alt="工作台"><figcaption>督导工作台 · 数据看板（真实界面）</figcaption></figure>
       <figure style="flex:1"><img src="{IMG["radar"]}" alt="雷达图"><figcaption>课程评价多维度可视化（示例）</figcaption></figure></div>''')
 
 # 12 学院评价统计
@@ -149,11 +155,11 @@ fdetail("04 核心功能 · 功能⑤","消息通知与提醒","打通“评价�
          "通知可点击直达评价详情，<b>反馈即时</b>","让质量改进闭环 <b>真正跑起来</b>"],
         notify_flow,13)
 
-# 14 功能⑥ 登录与用户管理
-fdetail("04 核心功能 · 功能⑥","工号登录与用户管理","以工号为唯一凭证，角色权限清晰可控",
-        ["全体用户以 <b>工号</b> 作为唯一登录凭证","初始密码即工号，支持 <b>首次登录后自助改密</b>",
-         "基于角色的 <b>权限控制与数据隔离</b>（如学院秘书仅见本院）","研究生院主管可进行 <b>用户与角色管理</b>"],
-        placeholder("工号登录页面"),14)
+# 15 功能⑥ 登录与用户管理（真实截图）
+slide(header("04 核心功能 · 功能⑥","工号登录与用户管理","工号为唯一凭证 · 初始密码即工号 · 可自助改密 · 角色权限与数据隔离")+
+      f'''<div class="ui-row login-row">
+      <figure style="flex:2.4"><img src="{IMG["login"]}" alt="登录页"><figcaption>工号登录页（真实界面）</figcaption></figure>
+      <figure style="flex:0.8"><img src="{IMG["usermenu"]}" alt="用户菜单"><figcaption>个人菜单 · 修改密码 / 退出</figcaption></figure></div>''')
 
 # 15 BUSINESS LOOP
 slide(header("05 业务闭环","督导业务闭环","从找课到改进，串成一条可沉淀、可统计、可追溯的数字化链路")+
@@ -164,7 +170,7 @@ slide(header("05 技术架构","系统架构（简要）","前后端分离 · �
       f'<img class="bigimg tall" src="{IMG["arch"]}" alt="系统架构">')
 
 # 17 ACHIEVEMENTS
-ach=[("book","真实数据驱动","1,344 门课 · 22 学院 · 2 校区 · 595 教师 · 58 用户"),
+ach=[("book","真实数据驱动","1,431 门课 · 22 学院 · 2 校区 · 588 教师 · 58 用户"),
      ("users","角色全覆盖","四类角色权限清晰，数据隔离到位"),("target","流程全闭环","找课—听课—评价—统计—反馈一站打通"),
      ("clipboard","评价标准化","复刻现行评价表，定量+定性，支持草稿与算分"),
      ("shield","质量有保障","全部单元测试通过 · TypeScript 零类型错误"),("layers","多端可用","电脑 / 平板 / 手机响应式适配")]
@@ -201,7 +207,7 @@ def qa_page(tab,title,sub,items,n):
                   f'<div class="a">{a}</div></div>' for q,a in items)
     slide(header(tab,title,sub)+f'<div class="qa-grid">{cards}</div>')
 qa_page("07 答辩 Q&A","常见问题预演（一）","建设与数据",[
-  ("数据来源是否可靠？如何保证与真实课表一致？","全部数据来源于学校《全校总课表》等真实文件，自动解析建库（1,344 门课、22 学院、595 名教师），筛选逻辑与原课表一致，可随新学期课表定期更新。"),
+  ("数据来源是否可靠？如何保证与真实课表一致？","全部数据来源于学校《全校总课表》等真实文件，自动解析建库（1,431 门课、22 学院、588 名教师），筛选逻辑与原课表一致，可随新学期课表定期更新。"),
   ("评价数据安全吗？会不会被篡改？","工号唯一登录 + 角色权限控制；学院秘书对评价为只读、不可修改删除；数据存于 PostgreSQL，操作可追溯。"),
   ("评价标准如何统一？","评价表完全复刻学校现行《课程评价表》，20 项定量 + 定性，系统自动计算综合评分，口径一致、结果可比。"),
   ("能否与现有信息化系统对接？","前后端分离、以工号为唯一标识，预留数据导入与接口能力，可逐步与研究生管理等系统对接。"),
@@ -295,6 +301,12 @@ html,body{{height:100%;background:#0a1830;font-family:"Microsoft YaHei","PingFan
 .ui-row figure.small{{flex:.66}}
 .ui-row img{{width:100%;border-radius:8px;display:block}}
 .ui-row figcaption{{text-align:center;font-size:15px;color:var(--gray);margin-top:10px}}
+.ui-row figure.wide{{flex:0 1 78%;max-width:78%}}
+.ui-row.formrow{{align-items:flex-start;gap:30px}}
+.ui-row.formrow figure{{flex:0 1 46%;max-width:46%;display:flex;flex-direction:column}}
+.ui-row.formrow img{{width:auto;max-width:100%;max-height:432px;margin:0 auto}}
+.ui-row.login-row{{align-items:stretch}}
+.ui-row.login-row img{{object-fit:contain;max-height:430px}}
 .cap{{font-size:15px;color:var(--gray)}} .cap.center{{text-align:center;margin-top:10px!important}}
 .nflow{{display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;gap:8px}}
 .nf-node{{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 24px;box-shadow:0 8px 20px rgba(14,42,86,.07);min-width:340px}}
