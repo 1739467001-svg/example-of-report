@@ -12,6 +12,7 @@ IMG={k:b64(f"{A}/{p}") for k,p in {
  "rec":"screenshots/eval-record.png",
  "login":"screenshots/login.png","workbench":"screenshots/workbench.png","courses":"screenshots/courses.png",
  "evalform1":"screenshots/evalform1.png","evalform2":"screenshots/evalform2.png","usermenu":"screenshots/usermenu.png",
+ "listenplan":"screenshots/listenplan.png",
 }.items()}
 
 def icon(name):
@@ -107,11 +108,11 @@ fdetail("04 核心功能 · 功能①","全校课程多维筛选","按多维度�
          "筛选逻辑与原课表一致（如“会计学院 + 第 3 周”精确联动）","督导专家可快速锁定“本周哪天、哪个学院、哪位老师”有课"],
         shotfig(IMG["courses"],"全校课程 · 多维筛选（真实界面）"),7)
 
-# 8 功能② 听课计划
-fdetail("04 核心功能 · 功能②","听课计划 · 待办与日历视图","把有意向的课程一键纳入计划，按周直观安排",
-        ["一键将课程加入 <b>听课计划</b>（类似待办清单）","<b>日历视图</b>：以“节次 × 星期”网格展示当周安排",
-         "待听课 / 已评价 / 已取消 三种状态 <b>不同颜色区分</b>","课前自动 <b>站内提醒</b>，避免漏听"],
-        placeholder("听课计划 · 日历视图"),8)
+# 8 功能② 听课计划（真实截图）
+fdetail("04 核心功能 · 功能②","听课计划 · 一键加入待办","在课程列表点“听课”即可加入计划，并可指定听课周次",
+        ["在全校课程列表 <b>一键“听课”</b>，将课程加入听课计划（待办）","可 <b>指定计划听课周次</b>（或“不指定周次”）",
+         "听课计划支持 <b>日历视图</b>（节次 × 星期网格）按周查看","待听课 / 已评价 / 已取消 <b>三状态区分</b>，课前自动站内提醒"],
+        shotfig(IMG["listenplan"],"加入听课计划（真实界面）"),8)
 
 # 9 功能③ 评价体系
 slide(header("04 核心功能 · 功能③","标准化课程评价体系","完全复刻学校现行《课程评价表》：20 项定量 + 定性，系统自动计算综合评分")+
@@ -302,9 +303,9 @@ html,body{{height:100%;background:#0a1830;font-family:"Microsoft YaHei","PingFan
 .ui-row img{{width:100%;border-radius:8px;display:block}}
 .ui-row figcaption{{text-align:center;font-size:15px;color:var(--gray);margin-top:10px}}
 .ui-row figure.wide{{flex:0 1 78%;max-width:78%}}
-.ui-row.formrow{{align-items:flex-start;gap:30px}}
-.ui-row.formrow figure{{flex:0 1 46%;max-width:46%;display:flex;flex-direction:column}}
-.ui-row.formrow img{{width:auto;max-width:100%;max-height:432px;margin:0 auto}}
+.ui-row.formrow{{align-items:flex-start;justify-content:center;gap:50px}}
+.ui-row.formrow figure{{flex:0 0 auto;display:flex;flex-direction:column}}
+.ui-row.formrow img{{width:auto;max-height:398px;margin:0 auto}}
 .ui-row.login-row{{align-items:stretch}}
 .ui-row.login-row img{{object-fit:contain;max-height:430px}}
 .cap{{font-size:15px;color:var(--gray)}} .cap.center{{text-align:center;margin-top:10px!important}}
